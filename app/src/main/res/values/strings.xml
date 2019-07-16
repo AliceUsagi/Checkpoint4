@@ -7,4 +7,6 @@
     <string name="mot_de_passe">Mot de passe</string>
     <string name="creer_mon_compte">CREER MON COMPTE</string>
     <string name="connecte_toi">Connecte toi</string>
+    <string name="me_connecter">Me connecter</string>
+    <string name="veuillez_remplir_les_champs_pour_continuer">Veuillez remplir tout les champs pour continuer</string>
 </resources>
