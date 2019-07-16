@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Livres</string>
-    <string name="cr_e_un_compte">Crée un compte</string>
+    <string name="cr_e_ton_compte">Crée ton compte</string>
     <string name="pseudo">Pseudo</string>
+    <string name="d_j_utilisateur_connecte_toi">Déjà utilisateur ? Connecte-toi</string>
     <string name="email">Email</string>
     <string name="mot_de_passe">Mot de passe</string>
     <string name="creer_mon_compte">CREER MON COMPTE</string>
+    <string name="connecte_toi">Connecte toi</string>
 </resources>
