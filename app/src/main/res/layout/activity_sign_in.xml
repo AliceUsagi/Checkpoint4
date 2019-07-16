@@ -7,7 +7,7 @@
     tools:context="activity.signInActivity">
 
     <TextView
-        android:id="@+id/tvPseudoSignIn"
+        android:id="@+id/tvMailSignIn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -15,7 +15,7 @@
         android:layout_marginTop="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="@string/pseudo"
+        android:text="@string/email"
         android:textColor="@color/tvTitle"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitleSignIn" />
 
     <EditText
-        android:id="@+id/etPwSignIn"
+        android:id="@+id/etMailSignIn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPwSignIn" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMailSignIn" />
 
     <TextView
         android:id="@+id/tvPwSignIn"
@@ -54,10 +54,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPseudoSignIn" />
+        app:layout_constraintTop_toBottomOf="@+id/etMailSignIn" />
 
     <EditText
-        android:id="@+id/etPseudoSignIn"
+        android:id="@+id/etPwSignIn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -66,11 +66,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPseudoSignIn" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPwSignIn" />
 
     <TextView
         android:id="@+id/tvTitleSignIn"
