@@ -104,12 +104,10 @@ public class VolleySingleton {
     public void readUser(User user, final Consumer<User> listener) {
         GsonBuilder gsonBuilder = new GsonBuilder();
         final Gson gson = gsonBuilder.create();
-        final String requestBody = gson.toJson(user);
-
-        final String signIn = SIGN_IN_URL + user.getIdUser();
+        String url = SIGN_IN_URL + user.getEmail() +"/" +user.getPassword();
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                signIn, null, new Response.Listener<JSONObject>() {
+                url, null, new Response.Listener<JSONObject>() {
 
             @Override
             public void onResponse(JSONObject response) {
@@ -125,25 +123,7 @@ public class VolleySingleton {
                         .setMessage("Your email or password are invalid !")
                         .show();
             }
-        }) {
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap<String, String> headers = new HashMap<String, String>();
-                headers.put("Content-Type", "application/json");
-                return headers;
-            }
-
-            @Override
-            public byte[] getBody() {
-                try {
-                    return requestBody == null ? null : requestBody.getBytes("utf-8");
-                } catch (UnsupportedEncodingException uee) {
-                    VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s",
-                            requestBody, "utf-8");
-                    return null;
-                }
-            }
-        };
+        });
 
         addToRequestQueue(jsonObjectRequest);
     }
