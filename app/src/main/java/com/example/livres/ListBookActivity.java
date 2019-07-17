@@ -17,10 +17,10 @@ public class ListBookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_book);
 
         List<Book> books = new ArrayList<>();
-        books.add(new Book("titre de film 1"));
-        books.add(new Book("titre de film 2"));
-        books.add(new Book("titre de film 3"));
-        books.add(new Book("titre de film 4"));
+        books.add(new Book("Harry Potter"));
+        books.add(new Book("Seigneur des anneaux"));
+        books.add(new Book("blabla"));
+        books.add(new Book("blablabla"));
 
         ListView lvBooks = findViewById(R.id.lvBook);
         BookAdapter adapter = new BookAdapter(ListBookActivity.this, books);
