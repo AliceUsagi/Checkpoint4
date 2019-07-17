@@ -1,4 +1,4 @@
-package activity;
+package com.example.livres;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.example.livres.R;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
@@ -22,7 +20,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         tvAlreadyUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CreateAccountActivity.this, signInActivity.class));
+                startActivity(new Intent(CreateAccountActivity.this, SignInActivity.class));
             }
         });
 
@@ -43,7 +41,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                             .show();
                     return;
                 }
-                startActivity(new Intent(CreateAccountActivity.this, signInActivity.class));
+                startActivity(new Intent(CreateAccountActivity.this, SignInActivity.class));
             }
         });
     }
