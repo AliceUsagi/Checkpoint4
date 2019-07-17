@@ -1,7 +1,10 @@
 package com.example.livres;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.livres.Model.Book;
@@ -25,5 +28,12 @@ public class ListBookActivity extends AppCompatActivity {
         ListView lvBooks = findViewById(R.id.lvBook);
         BookAdapter adapter = new BookAdapter(ListBookActivity.this, books);
         lvBooks.setAdapter(adapter);
+
+        lvBooks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(new Intent(ListBookActivity.this, ListBookActivity.class));
+            }
+        });
     }
 }

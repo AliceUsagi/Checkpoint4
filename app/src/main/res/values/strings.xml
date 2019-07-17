@@ -10,4 +10,5 @@
     <string name="me_connecter">Me connecter</string>
     <string name="veuillez_remplir_les_champs_pour_continuer">Veuillez remplir tout les champs pour continuer</string>
     <string name="nom_du_livre">Nom du livre</string>
+    <string name="title_activity_book">BookActivity</string>
 </resources>

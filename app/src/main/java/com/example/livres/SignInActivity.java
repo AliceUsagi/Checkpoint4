@@ -2,11 +2,14 @@ package com.example.livres;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.util.Consumer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.livres.Model.User;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -30,7 +33,18 @@ public class SignInActivity extends AppCompatActivity {
                             .show();
                     return;
                 }
-                startActivity(new Intent(SignInActivity.this, ListBookActivity.class));
+                User user = new User();
+                user.setEmail(email);
+                user.setPassword(password);
+
+                VolleySingleton.getInstance(SignInActivity.this).readUser(user, new Consumer<User>() {
+                    @Override
+                    public void accept(User user) {
+                        UserSingleton.getInstance().setUser(user);
+                        Intent intent = new Intent(SignInActivity.this, ListBookActivity.class);
+                        startActivity(intent);
+                    }
+                });
             }
         });
     }
