@@ -11,4 +11,9 @@
     <string name="veuillez_remplir_les_champs_pour_continuer">Veuillez remplir tout les champs pour continuer</string>
     <string name="nom_du_livre">Nom du livre</string>
     <string name="title_activity_book">BookActivity</string>
+    <string name="titre_du_livre">Titre du livre</string>
+    <string name="resume">Résumé</string>
+    <string name="name">Name</string>
+    <string name="auteur">Auteur</string>
+    <string name="envoy">Envoyé</string>
 </resources>

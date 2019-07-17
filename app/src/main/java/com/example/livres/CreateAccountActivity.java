@@ -31,12 +31,14 @@ public class CreateAccountActivity extends AppCompatActivity {
         btCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText etPseudo = findViewById(R.id.etPseudo);
+                EditText etPseudo = findViewById(R.id.etName);
                 EditText etEmail = findViewById(R.id.etMail);
                 EditText etPw = findViewById(R.id.etPw);
+
                 String pseudo = etPseudo.getText().toString();
                 String email = etEmail.getText().toString();
                 String password = etPw.getText().toString();
+
                 if (pseudo.isEmpty() || email.isEmpty() || password.isEmpty()) {
                     new AlertDialog.Builder(CreateAccountActivity.this)
                             .setTitle("Error")

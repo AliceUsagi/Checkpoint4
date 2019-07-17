@@ -7,7 +7,7 @@
     tools:context=".ListBookActivity">
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabCreateAdventure"
+        android:id="@+id/fabCreateBook"
         android:layout_width="wrap_content"
         android:layout_height="141dp"
         android:layout_marginStart="8dp"

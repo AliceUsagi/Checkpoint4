@@ -2,8 +2,9 @@ package com.example.livres.Model;
 
 public class Book {
 
-    private Long id;
+    private Long idBook;
     private String title;
+    private String author;
     private String resume;
 
     public Book(String title) {
@@ -13,12 +14,12 @@ public class Book {
     public Book() {
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdBook() {
+        return idBook;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdBook(Long idBook) {
+        this.idBook = idBook;
     }
 
     public String getTitle() {
@@ -35,5 +36,13 @@ public class Book {
 
     public void setResume(String resume) {
         this.resume = resume;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }

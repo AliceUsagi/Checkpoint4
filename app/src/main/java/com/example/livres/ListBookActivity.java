@@ -1,6 +1,7 @@
 package com.example.livres;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +34,14 @@ public class ListBookActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 startActivity(new Intent(ListBookActivity.this, ListBookActivity.class));
+            }
+        });
+
+        FloatingActionButton fabCreateBook = findViewById(R.id.fabCreateBook);
+        fabCreateBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ListBookActivity.this, DescriptionBookActivity.class));
             }
         });
     }
