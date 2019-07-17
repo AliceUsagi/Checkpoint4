@@ -1,11 +1,11 @@
 package com.example.livres;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.util.Consumer;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.livres.Model.Book;
@@ -20,20 +20,17 @@ public class ListBookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_book);
 
-        List<Book> books = new ArrayList<>();
-        books.add(new Book("Harry Potter"));
-        books.add(new Book("Seigneur des anneaux"));
-        books.add(new Book("blabla"));
-        books.add(new Book("blablabla"));
-
-        ListView lvBooks = findViewById(R.id.lvBook);
-        BookAdapter adapter = new BookAdapter(ListBookActivity.this, books);
-        lvBooks.setAdapter(adapter);
-
-        lvBooks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        VolleySingleton.getInstance(ListBookActivity.this).getBooks(new Consumer<List<Book>>() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(ListBookActivity.this, ListBookActivity.class));
+            public void accept(List<Book> books) {
+                ArrayList<Book> bookList = new ArrayList<>();
+                for (Book book : books) {
+                    bookList.add(book);
+                }
+
+                ListView lvBook = findViewById(R.id.lvBook);
+                BookAdapter adapter = new BookAdapter(ListBookActivity.this, bookList);
+                lvBook.setAdapter(adapter);
             }
         });
 

@@ -10,6 +10,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.livres.Model.Book;
@@ -17,11 +18,15 @@ import com.example.livres.Model.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class VolleySingleton {
@@ -175,5 +180,32 @@ public class VolleySingleton {
             }
         };
         addToRequestQueue(jsonObjectRequest);
+    }
+
+    public void getBooks(final Consumer<List<Book>> collectPointListener) {
+        String url = API_URL + "book";
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        final Gson gson = gsonBuilder.create();
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        List<Book> book = new ArrayList<>();
+                        if (response.length() > 0) {
+                            book = Arrays.asList(gson.fromJson(response.toString(), Book[].class));
+                        }
+                        collectPointListener.accept(book);
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.e("Error: ", error.getMessage());
+            }
+        });
+        addToRequestQueue(jsonArrayRequest);
     }
 }
