@@ -16,4 +16,6 @@
     <string name="name">Name</string>
     <string name="auteur">Auteur</string>
     <string name="envoy">Envoyé</string>
+    <string name="resum">Résumé</string>
+    <string name="titre">Titre</string>
 </resources>

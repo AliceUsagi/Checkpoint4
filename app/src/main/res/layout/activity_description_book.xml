@@ -51,7 +51,7 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="@string/resume"
+        android:hint="@string/resum"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

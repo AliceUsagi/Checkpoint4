@@ -43,7 +43,7 @@ public class DescriptionBookActivity extends AppCompatActivity {
                 VolleySingleton.getInstance(DescriptionBookActivity.this).postBook(book, user, new Consumer<Book>(){
                     @Override
                     public void accept(Book book) {
-                        BookSingleton.getInstance().setBook(book);
+                     //   BookSingleton.getInstance().setBook(book);
                         Intent intent = new Intent(DescriptionBookActivity.this, ListBookActivity.class);
                         startActivity(intent);
                     }
